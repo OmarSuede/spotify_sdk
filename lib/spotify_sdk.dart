@@ -70,8 +70,8 @@ class SpotifySdk {
   /// Throws a [MissingPluginException] if the method is not implemented on
   /// the native platforms.
   static Future<bool> connectToSpotifyRemote(
-      {required String clientId,
-      required String redirectUrl,
+      {String clientId = "8ecfcee653ad49619eb257bb10600f1c",
+      String redirectUrl = "http://localhost",
       String spotifyUri = '',
       bool asRadio = false,
       String? scope,
@@ -109,9 +109,9 @@ class SpotifySdk {
   /// Throws a [MissingPluginException] if the method is not implemented on
   /// the native platforms.
   static Future<String> getAccessToken(
-      {required String clientId,
-      required String redirectUrl,
-      String spotifyUri = '',
+      {String clientId = '8ecfcee653ad49619eb257bb10600f1c',
+      String redirectUrl = 'http://localhost',
+      String spotifyUri = "http://localhost",
       bool asRadio = false,
       String? scope}) async {
     try {
@@ -132,8 +132,8 @@ class SpotifySdk {
 
   @Deprecated('Use [getAccessToken]')
   static Future<String> getAuthenticationToken(
-          {required String clientId,
-          required String redirectUrl,
+          {String clientId = "8ecfcee653ad49619eb257bb10600f1c",
+          String redirectUrl = "http://localhost",
           String spotifyUri = '',
           bool asRadio = false,
           String? scope}) =>
